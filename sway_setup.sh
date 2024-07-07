@@ -3,17 +3,17 @@ sudo apt install python3-pip python3-gi gir1.2-gtk-3.0 mpv sway -y
 
 sudo apt-get install pix-plym-splash -y
 
-mkdir -p /home/pi/.config/i3/
-echo "exec /home/pi/start.sh" > /home/pi/.config/i3/config
+mkdir -p ~/.config/i3/
+echo "exec /home/impulse/start.sh" > /home/impulse/.config/i3/config
 
-cp file.mp4 /home/pi/
-cp code.py /home/pi/
-cp start.sh /home/pi/
-sudo chmod +x /home/pi/start.sh
+cp file.mp4 ~/
+cp code.py ~/
+cp start.sh ~/
+sudo chmod +x ~/start.sh
 
-sudo echo "disable_splash=1" >> /boot/config.txt
-sudo sed -i 's/console=tty1/console=tty3/g' /boot/cmdline.txt
-sudo sed -i '1s/$/ quiet splash plymouth.ignore-serial-consoles logo.nologo vt.global_cursor_default=0/' /boot/cmdline.txt
+echo "disable_splash=1" | sudo tee -a /boot/firmware/config.txt
+sudo sed -i 's/console=tty1/console=tty3/g' /boot/firmware/cmdline.txt
+sudo sed -i '1s/$/ quiet splash plymouth.ignore-serial-consoles logo.nologo vt.global_cursor_default=0/' /boot/firmware/cmdline.txt
 sudo cp splash.png /usr/share/plymouth/themes/pix/
 sudo plymouth-set-default-theme --rebuild-initrd pix
 
