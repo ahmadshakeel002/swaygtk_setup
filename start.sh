@@ -1,1 +1,1 @@
-python3 /home/pi/code.py
+python3 /home/impulse/code.py

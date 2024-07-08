@@ -15,7 +15,7 @@ class VideoPlayerApp(Gtk.Window):
         self.add(button)
 
     def on_play_button_clicked(self, widget):
-        video_path = "/home/pi/file.mp4"  # Replace with the actual path to your video
+        video_path = "/home/impulse/file.mp4"  # Replace with the actual path to your video
         subprocess.run(["mpv", "--fs", video_path])
 
 def main():
